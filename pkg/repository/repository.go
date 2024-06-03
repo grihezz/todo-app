@@ -22,6 +22,7 @@ type TodoItem interface {
 	Create(listId int, item Resrik.TodoItem) (int, error)
 	GetAll(userId, listId int) ([]Resrik.TodoItem, error)
 	GetByItemId(userId, itemId int) ([]Resrik.TodoItem, error)
+	Delete(userId, itemId int) error
 }
 type Repository struct {
 	Authorization

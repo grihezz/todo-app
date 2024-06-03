@@ -43,7 +43,7 @@ func (h *Handler) InitRouts() *gin.Engine {
 		{
 			items.GET("/:id", h.getByItemId)
 			items.PUT("/:id", h.updateItem)
-			items.DELETE("/:item_id", h.deleteItem)
+			items.DELETE("/:id", h.deleteItem)
 		}
 	}
 	return router

@@ -23,6 +23,7 @@ type TodoItem interface {
 	Create(userId int, listId int, item Resrik.TodoItem) (int, error)
 	GetAll(userId, listId int) ([]Resrik.TodoItem, error)
 	GetByItemId(userId int, itemId int) ([]Resrik.TodoItem, error)
+	Delete(userId, itemId int) error
 }
 
 type Service struct {

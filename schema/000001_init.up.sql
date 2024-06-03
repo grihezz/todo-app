@@ -15,7 +15,7 @@ CREATE TABLE todo_lists
 
 CREATE TABLE todo_items
 (
-    id              SERIAL PRIMARY KEY,
+    id              SERIAL PRIMARY KEY UNIQUE ,
     title           VARCHAR(255) NOT NULL,
     description     VARCHAR(255),
     done            BOOLEAN      NOT NULL DEFAULT false
@@ -23,9 +23,9 @@ CREATE TABLE todo_items
 
 CREATE TABLE users_lists
 (
-    id          SERIAL,
-    user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    list_id     INTEGER NOT NULL REFERENCES todo_lists(id)
+    id          SERIAL NOT NULL UNIQUE,
+    user_id     INT  REFERENCES users(id) ON DELETE CASCADE NOT NULL ,
+    list_id     INT  REFERENCES todo_lists(id) ON DELETE CASCADE NOT NULL
 );
 
 CREATE TABLE lists_items

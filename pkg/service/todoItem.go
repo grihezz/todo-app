@@ -36,3 +36,7 @@ func (s *TodoItemService) GetByItemId(userId int, itemId int) ([]Resrik.TodoItem
 func (s *TodoItemService) Delete(userId, itemId int) error {
 	return s.repo.Delete(userId, itemId)
 }
+
+func (s *TodoItemService) Update(userId, itemId int, input Resrik.UpdateInputItem) error {
+	return s.repo.Update(userId, itemId, input)
+}
